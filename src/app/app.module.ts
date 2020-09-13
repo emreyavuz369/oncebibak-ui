@@ -5,6 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {EntityModule} from './Entitties/entity.module';
 import {ErrorComponent, FooterComponent, NavbarComponent} from './Entitties/layout';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,9 @@ import {ErrorComponent, FooterComponent, NavbarComponent} from './Entitties/layo
   ],
   imports: [
     BrowserModule,
+    EntityModule,
     AppRoutingModule,
-    EntityModule
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
