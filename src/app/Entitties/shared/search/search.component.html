@@ -1,14 +1,8 @@
-<div class="row justify-content-center col-md-8 pt-md-5 pb-md-5 search-bar input-group">
+<div class="row justify-content-center pt-md-5 pb-md-5 search-bar input-group">
   <input id="product-search" type="text" class="form-control search"
-         [placeholder]="'sadece cep telefonları'"
-         placement="bottom"
-         container="body"
-         triggers="manual"/>
-
-<!--  <div class="input-group-append">-->
-<!--            <span class="input-group-text search-button">-->
-<!--                <fa-icon [icon]="'search'"></fa-icon>-->
-<!--            </span>-->
-<!--  </div>-->
+         [placeholder]="'Sadece cep telefonu'"
+         [resultFormatter]="formatResult"
+         [inputFormatter]="formatResult"
+         [ngbTypeahead]="search"
+         (selectItem)="select($event.item)"/>
 </div>
-
