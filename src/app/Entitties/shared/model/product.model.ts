@@ -2,11 +2,11 @@ export interface IProduct {
   id?: number;
   name?: string;
   description?: any;
-  image?: any;
+  imagePath?: any;
   brandName?: string;
   brandId?: number;
-  modelName?: string;
-  modelId?: number;
   categoryName?: string;
   categoryId?: number;
+  avarageScore?: string; // ürün ortalama puan bilgisi
+  commentTotalCount?: number;
 }

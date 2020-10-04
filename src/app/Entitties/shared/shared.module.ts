@@ -5,7 +5,8 @@ import {FavoriteProductsComponent} from './favorite-products/favorite-products.c
 import {FavoriteCommentsComponent} from './favorite-comments/favorite-comments.component';
 import {HowItWorksComponent} from './how-it-works/how-it-works.component';
 import {WhatWeDoComponent} from './what-we-do/what-we-do.component';
-import {NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbRatingModule, NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
+import {CommonModule} from '@angular/common';
 
 const exportedComponents = [
   CommentsComponent,
@@ -19,9 +20,11 @@ const exportedComponents = [
 @NgModule({
   declarations: [exportedComponents],
   exports: [exportedComponents],
-    imports: [
-        NgbTypeaheadModule
-    ]
+  imports: [
+    NgbTypeaheadModule,
+    NgbRatingModule,
+    CommonModule
+  ]
 })
 export class SharedModule {
 }

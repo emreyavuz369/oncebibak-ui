@@ -1,61 +1,21 @@
+<hr>
+<h2>Favori Ürünler</h2>
 <div class="row row-cols-1 row-cols-md-3">
 
-  <div class="col mb-4">
+  <div class="col mb-4" *ngFor="let product of products">
     <div class="card">
-      <img src="../../../../assets/images/iphone11.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col mb-4">
-    <div class="card">
-      <img src="../../../../assets/images/iphone11.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col mb-4">
-    <div class="card">
-      <img src="../../../../assets/images/iphone11.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col mb-4">
-    <div class="card">
-      <img src="../../../../assets/images/iphone11.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col mb-4">
-    <div class="card">
-      <img src="../../../../assets/images/iphone11.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col mb-4">
-    <div class="card">
-      <img src="../../../../assets/images/iphone11.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <img [src]="product.imagePath" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <span style="color: #ffc107 !important;">
+          <h6>{{product.avarageScore}}</h6>
+          <ngb-rating class="average-rate" [rate]="product.avarageScore" max="5" readonly></ngb-rating>
+        </span>
+        <br>
+        <small>{{(product.categoryName | titlecase) + '  ' + (product.brandName | titlecase)}}</small>
+        <br>
+        <h5 class="card-title">{{product.name}}</h5>
+        <br>
+        <button type="button" class="btn btn-primary">Yorumlara Git</button>
       </div>
     </div>
   </div>
