@@ -1,5 +1,14 @@
-<hr>
-<h2>Favori Ürünler</h2>
+<!-- head-line -->
+<div class="head-line-wrapper">
+  <div class="line"></div>
+  <h2 class="title">
+    <strong class="mr-2">Favori</strong>
+    <span>Ürünler</span>
+  </h2>
+  <div class="line"></div>
+</div>
+<!-- head-line end -->
+
 <div class="row row-cols-1 row-cols-md-3">
 
   <div class="col mb-4" *ngFor="let product of products">
@@ -11,7 +20,10 @@
           <ngb-rating class="average-rate" [rate]="product.avarageScore" max="5" readonly></ngb-rating>
         </span>
         <br>
-        <p class="card-text"><small class="text-muted">{{(product.categoryName | titlecase) + '     ' + (product.brandName | titlecase)}}</small></p>
+        <p class="card-text">
+          <small class="text-muted mr-3">{{ product.categoryName | titlecase }}</small>
+          <small class="text-muted">{{ product.brandName | titlecase }}</small>
+        </p>
         <br>
         <h5 class="card-title">{{product.name}}</h5>
         <br>

@@ -1,4 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+$primary: rgba(35,4,68,1);
+
+body {
+  font-family: Montserrat !important;
+}
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+
+  &:hover {
+    background-color: transparentize($primary, 0.3);
+    border-color: $primary;
+  }
+}
+
+.card {
+  box-shadow: 0 0px 6px -1px #ccc;
+  border: 0;
+  padding: 1rem 1rem 5px;
+}
+
+.head-line-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 3rem 0;
+
+  .line {
+    flex: 1;
+    border: 1px solid #ccc;
+  }
+
+  .title {
+    margin: 0 1rem;
+    color: $primary;
+  }
+}
