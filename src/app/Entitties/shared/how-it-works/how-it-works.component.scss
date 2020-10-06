@@ -1,0 +1,27 @@
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .card-item {
+        flex: 200px;
+
+        &:not(:nth-child(1)) {
+            margin-left: 1rem;
+        }
+
+        .card-image {
+            height: 200px;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 120px;
+            }
+        }
+
+        .card-info {
+            text-align: center;
+        }
+    }
+}
