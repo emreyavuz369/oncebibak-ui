@@ -1,0 +1,48 @@
+$primary: rgba(35, 4, 68, 1);
+$secondary: rgba(252, 202, 86, 1);
+
+.logo {
+  white-space: nowrap;
+  display: inline-block;
+
+  .oncebibak {
+    color: $primary;
+    font-size: 6rem;
+    text-align: left;
+    line-height: 1;
+
+    :nth-child(1) {
+      font-weight: 400;
+    }
+
+    :nth-child(2) {
+      font-weight: 600;
+    }
+
+    :nth-child(3) {
+      font-weight: 900;
+    }
+  }
+
+  .sonra-al {
+    font-family: Photograph Signature, serif;
+    font-weight: normal;
+    font-size: 7rem;
+    color: $secondary;
+    text-align: right;
+    transform: translate(-824.011px, -149.364px) matrix(1, 0, 0, 1, 886.322, 172.4883) rotate(-3deg);
+    line-height: 0;
+  }
+
+  margin-bottom: 8rem;
+}
+
+.slogan {
+  color: $primary;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+
+
+

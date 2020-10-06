@@ -2,7 +2,7 @@
 $primary: rgba(35,4,68,1);
 
 body {
-  font-family: Montserrat !important;
+  font-family: Montserrat, serif !important;
 }
 
 /* Importing Bootstrap SCSS file. */
@@ -18,7 +18,7 @@ body {
 }
 
 .card {
-  box-shadow: 0 0px 6px -1px #ccc;
+  box-shadow: 0 0 6px -1px #ccc;
   border: 0;
   padding: 1rem 1rem 5px;
 }
@@ -37,4 +37,11 @@ body {
     margin: 0 1rem;
     color: $primary;
   }
+}
+
+@font-face {
+  font-family: 'Photograph Signature';
+  font-style: normal;
+  font-weight: normal;
+  src: url('src/assets/fonts/Photograph Signature.ttf') format('truetype');
 }
