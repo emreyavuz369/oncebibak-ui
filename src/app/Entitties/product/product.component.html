@@ -1,3 +1,49 @@
 <app-search></app-search>
+<ng-template [ngIf]="product" [ngIfElse]="productNotFound">
+
+  <div class="row">
+    <div class="col-md-3 border rounded p-0 picture-height">
+      <img [src]="product.imagePath" class="card-img-top" alt="...">
+    </div>
+
+    <div class="col-md-9">
+      <span style="color: #ffc107 !important;">
+        <h2>{{product.avarageScore}}</h2>
+        <h2>Ortalama</h2>
+        <ngb-rating class="average-rate" [rate]="product.avarageScore" max="5" readonly></ngb-rating>
+      </span>
+
+      <div class="row" *ngIf="productRates">
+        <div class="col-12" *ngFor="let i of [5,4,3,2,1]">
+          <i>{{i}}</i>
+          <ngb-rating style="outline: none" [rate]="1" [max]="1" readonly></ngb-rating>
+          <ngb-progressbar type="warning" [value]="calculatePercentage(i)" showValue="true"></ngb-progressbar>
+          <i>{{productRates[i]}} Yorum</i>
+          <br>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <h5 class="text-muted mr-3">{{ product.brandName | titlecase }}</h5>
+    <h5 class="text-muted mr-3">{{ product.name | titlecase }}</h5>
+
+  </div>
+  <div class="row">
+    <p class="card-text">
+      <small class="text-muted mr-3">{{ product.categoryName | titlecase }}</small>
+      <small class="text-muted">{{ product.brandName | titlecase }}</small>
+    </p>
+  </div>
+
+</ng-template>
+
+<ng-template #productNotFound>
+  <div class="alert alert-danger">
+    {{'Ürün bulunamadı'}}
+  </div>
+</ng-template>
+
 <app-comments></app-comments>
 <app-favorite-products></app-favorite-products>

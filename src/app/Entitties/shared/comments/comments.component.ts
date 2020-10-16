@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {IProduct} from '../model/product.model';
+import {ProductService} from '../../product/product.service';
 
 @Component({
   selector: 'app-comments',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
-  constructor() { }
+  myProduct: IProduct;
+
+  constructor(private productService: ProductService) {
+  }
 
   ngOnInit(): void {
   }

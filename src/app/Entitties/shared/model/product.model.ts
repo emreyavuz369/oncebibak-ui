@@ -7,6 +7,6 @@ export interface IProduct {
   brandId?: number;
   categoryName?: string;
   categoryId?: number;
-  avarageScore?: string; // ürün ortalama puan bilgisi
+  avarageScore?: number; // ürün ortalama puan bilgisi
   commentTotalCount?: number;
 }
