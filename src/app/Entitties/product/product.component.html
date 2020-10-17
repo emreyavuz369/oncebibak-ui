@@ -2,39 +2,47 @@
 <ng-template [ngIf]="product" [ngIfElse]="productNotFound">
 
   <div class="row">
-    <div class="col-md-3 border rounded p-0 picture-height">
-      <img [src]="product.imagePath" class="card-img-top" alt="...">
+    <div class="col-md-6 col-12">
+      <div class="card">
+        <img [src]="product.imagePath" class="card-img-top" alt="...">
+      </div>
+      <div class="d-flex align-items-center pt-2 px-2">
+        <div class="flex-fill d-flex">
+          <h5 class="text-muted mr-3">{{ product.brandName | titlecase }}</h5>
+          <h5 class="text-muted">{{ product.name | titlecase }}</h5>
+        </div>
+        <div class="d-flex align-items-center">
+          <fa-icon class="yellow" [icon]="faComment"></fa-icon>
+          <h6 class="mb-1 ml-2">{{ product.commentTotalCount }} yorum</h6>
+        </div>
+      </div>
+      <div class="px-2">
+        <p class="card-text">
+          <small class="text-muted mr-3">{{ product.categoryName | titlecase }}</small>
+          <small class="text-muted">{{ product.brandName | titlecase }}</small>
+        </p>
+      </div>
     </div>
 
-    <div class="col-md-9">
-      <span style="color: #ffc107 !important;">
-        <h2>{{product.avarageScore}}</h2>
+    <div class="col-md-6 col-12">
+      <div class="d-flex flex-column align-items-center">
+        <h1 class="yellow">{{product.avarageScore}}</h1>
         <h2>Ortalama</h2>
-        <ngb-rating class="average-rate" [rate]="product.avarageScore" max="5" readonly></ngb-rating>
-      </span>
+        <ngb-rating class="average-rate" [rate]="product.avarageScore" max="5" [readonly]="true"></ngb-rating>
+      </div>
 
-      <div class="row" *ngIf="productRates">
-        <div class="col-12" *ngFor="let i of [5,4,3,2,1]">
-          <i>{{i}}</i>
-          <ngb-rating style="outline: none" [rate]="1" [max]="1" readonly></ngb-rating>
-          <ngb-progressbar type="warning" [value]="calculatePercentage(i)" showValue="true"></ngb-progressbar>
-          <i>{{productRates[i]}} Yorum</i>
-          <br>
+      <div class="d-block" *ngIf="productRates">
+        <div class="d-flex align-items-center mt-2" *ngFor="let i of [5,4,3,2,1]">
+          <i class="mr-1 text-primary">{{i}}</i>
+          <ngb-rating class="text-primary" style="font-size: 22px" [rate]="1" [max]="1" [readonly]="true"></ngb-rating>
+          <ngb-progressbar class="flex-fill ml-2" type="warning" [value]="calculatePercentage(i)" showValue="true"></ngb-progressbar>
+          <div class="d-flex justify-content-end text-primary" style="width: 90px">
+            <i >{{productRates[i]}} Yorum</i>
+          </div>
         </div>
       </div>
     </div>
 
-  </div>
-  <div class="row">
-    <h5 class="text-muted mr-3">{{ product.brandName | titlecase }}</h5>
-    <h5 class="text-muted mr-3">{{ product.name | titlecase }}</h5>
-
-  </div>
-  <div class="row">
-    <p class="card-text">
-      <small class="text-muted mr-3">{{ product.categoryName | titlecase }}</small>
-      <small class="text-muted">{{ product.brandName | titlecase }}</small>
-    </p>
   </div>
 
 </ng-template>

@@ -43,7 +43,7 @@ export class ProductService {
     return of({
       1: 12,
       2: 10,
-      3: 4,
+      3: 1,
       4: 25,
       5: 2
     });

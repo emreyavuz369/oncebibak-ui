@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {IProduct} from '../shared/model/product.model';
 import {calculatePercentage} from '../shared/util/generic-util';
 import {ActivatedRoute} from '@angular/router';
+import { faComment } from '@fortawesome/free-solid-svg-icons/faComment';
 
 @Component({
   selector: 'app-product',
@@ -11,6 +12,7 @@ import {ActivatedRoute} from '@angular/router';
 export class ProductComponent implements OnInit {
   product: IProduct;
   productRates: object;
+  faComment = faComment;
 
   constructor(private activatedRoute: ActivatedRoute) {
   }
