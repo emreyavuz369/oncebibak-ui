@@ -35,16 +35,17 @@
         <div class="d-flex align-items-center mt-2" *ngFor="let i of [5,4,3,2,1]">
           <i class="mr-1 text-primary">{{i}}</i>
           <ngb-rating class="text-primary" style="font-size: 22px" [rate]="1" [max]="1" [readonly]="true"></ngb-rating>
-          <ngb-progressbar class="flex-fill ml-2" type="warning" [value]="calculatePercentage(i)" showValue="true"></ngb-progressbar>
+          <ngb-progressbar class="flex-fill ml-2" type="warning" [value]="calculatePercentage(i)"
+                           showValue="true"></ngb-progressbar>
           <div class="d-flex justify-content-end text-primary" style="width: 90px">
-            <i >{{productRates[i]}} Yorum</i>
+            <i>{{productRates[i]}} Yorum</i>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
+  <app-comments [productId]="product.id"></app-comments>
 </ng-template>
 
 <ng-template #productNotFound>
@@ -53,5 +54,4 @@
   </div>
 </ng-template>
 
-<app-comments></app-comments>
 <app-favorite-products></app-favorite-products>

@@ -1,1 +1,49 @@
-<p>comments works!</p>
+<!-- head-line -->
+<div class="head-line-wrapper">
+  <div class="line"></div>
+  <h2 class="title">
+    <strong class="mr-2">Kullanıcı</strong>
+    <span>Yorumları</span>
+  </h2>
+  <div class="line"></div>
+</div>
+<!-- head-line end -->
+<ng-template [ngIf]="loading" [ngIfElse]="screen">
+  <!--  <jhi-loading></jhi-loading>-->
+</ng-template>
+<ng-template #screen>
+  <ng-template [ngIf]="comments && comments.length > 0" [ngIfElse]="defaultTemplate">
+    <div class="comment-wrapper">
+      <div class="panel panel-info">
+        <div class="panel-body scrollable-content">
+          <ul class="media-list">
+            <li class="media" *ngFor="let comment of comments">
+              <span class="pull-left">
+                  <img class="rounded-circle"
+                       [src]="'../../../../assets/images/profile/' + comment.userName + '.png'"
+                       alt="user-photo">
+              </span>
+              <div class="media-body pl-3">
+                <span class="float-right">
+                    <small class="text-muted">{{comment.commentDate}}</small>
+                </span>
+                <ngb-rating *ngIf="comment.productRate" class="rating"
+                            [rate]="comment.productRate" [max]="5" readonly></ngb-rating>
+                <br>
+                <strong>{{comment.commentHeader | titlecase}}</strong>
+                <br>
+                <small>{{comment.userComment}}</small>
+              </div>
+            </li>
+          </ul>
+          <button *ngIf="total > comments.length" (click)="getComments()" type="button" class="btn btn-primary">
+            Daha Falasını Göster
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #defaultTemplate>
+    <h5 class="text-center">Ürüne ait yorum bulunamadı...</h5>
+  </ng-template>
+</ng-template>

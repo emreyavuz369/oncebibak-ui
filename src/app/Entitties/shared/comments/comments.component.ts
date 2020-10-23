@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {IProduct} from '../model/product.model';
-import {ProductService} from '../../product/product.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {IComment} from '../model/comment.model';
+import {CommentService} from './comment.service';
+import {finalize} from 'rxjs/operators';
 
 @Component({
   selector: 'app-comments',
@@ -9,12 +10,28 @@ import {ProductService} from '../../product/product.service';
 })
 export class CommentsComponent implements OnInit {
 
-  myProduct: IProduct;
+  @Input() productId: number;
+  comments: IComment[] = [];
+  page = 0;
+  size = 5;
+  total = 13; // bu bilgi servisten alinacak
+  loading: boolean;
 
-  constructor(private productService: ProductService) {
+  constructor(private commentService: CommentService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getComments();
+  }
+
+  getComments() {
+    this.loading = true;
+    this.commentService.getProductComments(this.productId, {page: this.page, size: this.size})
+      .pipe(finalize(() => this.loading = false))
+      .subscribe((comments: IComment[]) => {
+        this.comments = this.comments.concat(comments);
+        this.page++;
+      });
   }
 
 }

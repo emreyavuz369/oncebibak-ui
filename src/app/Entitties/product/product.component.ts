@@ -25,8 +25,6 @@ export class ProductComponent implements OnInit {
   }
 
   calculatePercentage(index: number): number {
-    const x = calculatePercentage(this.productRates[index], this.product.commentTotalCount);
-    console.log(x);
-    return x;
+    return calculatePercentage(this.productRates[index], this.product.commentTotalCount);
   }
 }

@@ -1,0 +1,35 @@
+// comment alanı için yazılanlar
+.comment-wrapper .panel-body {
+  //max-height: 50vh;
+  overflow: auto;
+}
+
+.comment-wrapper .media-list .media {
+  border-bottom: 1px dashed #efefef;
+  padding: 1rem;
+}
+
+.comment-wrapper .media-list {
+  padding-inline-start: 0;
+}
+
+.comment-wrapper .media-list .media img {
+  width: 64px;
+  height: 64px;
+  border: 2px solid #e5e7e8;
+}
+
+// comment alanı için yazılanlar - END
+
+// yorum puanı yıldızları için
+.rating {
+  font-size: 21px;
+  color: #ffc107 !important;
+  outline: none;
+}
+
+// pageination bilgisi için
+.item-count {
+  margin: -7px 0 7px 0;
+  font-style: italic;
+}
