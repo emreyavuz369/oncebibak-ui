@@ -21,9 +21,9 @@ export class CommentService {
     const comment1: IComment = {
       commentDate: '2020-06-21',
       commentHeader: 'iphone',
-      commentUrl: 'www.n11.com',
+      commentUrl: 'https://www.n11.com/urun/apple-iphone-11-64-gb-apple-turkiye-garantili-1109951?magaza=cincin#unf-review',
       productRate: 4,
-      userComment: 'ürünü çok beğendik',
+      userComment: '2019 modeli bir telefon ama apple nin yani iphonenin daha doğrusu bir özelliği va kamerası 12 mp ama 48 mp li telefondamn daha güzel foto çekiyor video çekiyor buna bayılıyorum. Onun dışında hızlı şarjı gerçekten çok hızlı , kendi de hızlı güzel bir telefon abim de var kullanıyor ve çok memnun',
       userName: 'n11'
     };
 
@@ -32,7 +32,7 @@ export class CommentService {
       commentHeader: 'iphone 2',
       commentUrl: 'www.hepsiburada.com',
       productRate: 4,
-      userComment: 'ürünü çok beğendik',
+      userComment: '2019 modeli bir telefon ama apple nin yani iphonenin daha doğrusu bir özelliği va kamerası 12 mp ama 48 mp li telefondamn daha güzel foto çekiyor video çekiyor buna bayılıyorum. Onun dışında hızlı şarjı gerçekten çok hızlı , kendi de hızlı güzel bir telefon abim de var kullanıyor ve çok memnun',
       userName: 'hepsiburada'
     };
 

@@ -13,32 +13,35 @@
 </ng-template>
 <ng-template #screen>
   <ng-template [ngIf]="comments && comments.length > 0" [ngIfElse]="defaultTemplate">
-    <div class="comment-wrapper">
+    <div class="comment-wrapper card">
       <div class="panel panel-info">
         <div class="panel-body scrollable-content">
           <ul class="media-list">
-            <li class="media" *ngFor="let comment of comments">
-              <span class="pull-left">
-                  <img class="rounded-circle"
-                       [src]="'../../../../assets/images/profile/' + comment.userName + '.png'"
-                       alt="user-photo">
-              </span>
-              <div class="media-body pl-3">
-                <span class="float-right">
-                    <small class="text-muted">{{comment.commentDate}}</small>
-                </span>
-                <ngb-rating *ngIf="comment.productRate" class="rating"
-                            [rate]="comment.productRate" [max]="5" readonly></ngb-rating>
-                <br>
+            <li class="media d-flex flex-column" *ngFor="let comment of comments">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <img class="rounded-circle" [src]="'../../../../assets/images/profile/' + comment.userName + '.png'"
+                    alt="user-photo">
+                  <a [href]="comment.commentUrl" target="_blank" class="ml-2">Ürün linki</a>
+                </div>
+                <div class="d-flex align-items-center flex-wrap justify-content-end">
+                  <ngb-rating *ngIf="comment.productRate" class="rating" [rate]="comment.productRate" [max]="5"
+                    readonly>
+                  </ngb-rating>
+                  <small class="text-muted ml-2">{{comment.commentDate}}</small>
+                </div>
+              </div>
+              <div class="card media-body">
                 <strong>{{comment.commentHeader | titlecase}}</strong>
-                <br>
                 <small>{{comment.userComment}}</small>
               </div>
             </li>
           </ul>
-          <button *ngIf="total > comments.length" (click)="getComments()" type="button" class="btn btn-primary">
-            Daha Falasını Göster
-          </button>
+          <div class="d-flex justify-content-center">
+            <button *ngIf="total > comments.length" (click)="getComments()" type="button" class="btn btn-yellow">
+              Daha Falasını Göster
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-$primary: rgba(35,4,68,1);
+@import 'variables';
 
 body {
   font-family: Montserrat, serif !important;
@@ -24,7 +24,7 @@ body {
 .card {
   box-shadow: 0 0 6px -1px #ccc;
   border: 0;
-  padding: 1rem 1rem 5px;
+  padding: 1rem;
 }
 
 .head-line-wrapper {
