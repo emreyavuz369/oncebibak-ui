@@ -21,12 +21,12 @@
               <div class="d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
                   <img class="rounded-circle" [src]="'../../../../assets/images/profile/' + comment.userName + '.png'"
-                    alt="user-photo">
+                       alt="user-photo">
                   <a [href]="comment.commentUrl" target="_blank" class="ml-2">Ürün linki</a>
                 </div>
                 <div class="d-flex align-items-center flex-wrap justify-content-end">
                   <ngb-rating *ngIf="comment.productRate" class="rating" [rate]="comment.productRate" [max]="5"
-                    readonly>
+                              [readonly]="true">
                   </ngb-rating>
                   <small class="text-muted ml-2">{{comment.commentDate}}</small>
                 </div>
