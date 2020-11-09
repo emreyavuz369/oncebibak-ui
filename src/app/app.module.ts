@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {EntityModule} from './Entitties/entity.module';
 import {ErrorComponent, FooterComponent, NavbarComponent} from './Entitties/layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     EntityModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

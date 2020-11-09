@@ -1,1 +1,58 @@
-<p>contact works!</p>
+<div id="about">
+  <div id="background">
+    <img src="../../../assets/images/ID278.png" class="img-fluid" alt="Responsive image">
+  </div>
+  <div id="text" class="card text-center">
+    <ng-template [ngIf]="submitted" [ngIfElse]="form">
+      <div class="alert alert-success">
+        Formunuz baarılı bir şekilde iletilmiştir.
+      </div>
+    </ng-template>
+
+    <ng-template #form>
+      <strong>{{"Sorun, öneri ve görüşleriniz için lütfen formu doldurun"}}</strong>
+
+      <form #contactForm="ngForm" (ngSubmit)="submitContactInfo()">
+        <div class="form-group">
+          <input type="text" class="form-control" name="name" placeholder="Ad - Soyad"
+                 [(ngModel)]="contact.nameSurname" #name="ngModel">
+        </div>
+
+        <div class="form-group">
+          <input type="email" email="true" required class="form-control" name="mail" placeholder="Email"
+                 [(ngModel)]="contact.email" #mail="ngModel">
+
+          <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="alert alert-danger">
+            <div *ngIf="mail.errors.required">
+              Zorunlu!
+            </div>
+            <div *ngIf="mail.errors.email">
+              Hatalı mail!
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" name="subject" placeholder="Konu"
+                 [(ngModel)]="contact.subject" #subject="ngModel">
+        </div>
+
+        <div class="form-group">
+          <input type="text" required minlength="10" class="form-control" name="message" placeholder="Mesajınız"
+                 [(ngModel)]="contact.message" #message="ngModel">
+
+          <div *ngIf="message.invalid && (message.dirty || message.touched)" class="alert alert-danger">
+            <div *ngIf="message.errors.required">
+              Zorunlu!
+            </div>
+            <div *ngIf="message.errors.minlength">
+              Min 10 karakter!
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="contactForm.invalid" class="btn btn-yellow">Gönder</button>
+      </form>
+    </ng-template>
+  </div>
+</div>

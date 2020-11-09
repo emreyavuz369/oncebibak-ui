@@ -49,3 +49,14 @@ body {
   font-weight: normal;
   src: url('src/assets/fonts/Photograph Signature.ttf') format('truetype');
 }
+
+.btn-yellow {
+  color: white;
+  background-color: $yellow;
+  border-color: $yellow;
+
+  &:hover {
+    background-color: transparentize($yellow, 0.3);
+    border-color: $yellow;
+  }
+}

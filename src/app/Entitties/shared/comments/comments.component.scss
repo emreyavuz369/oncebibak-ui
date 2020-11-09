@@ -8,35 +8,24 @@
 
     .media-list {
       padding-inline-start: 0;
-  
+
       .media {
         align-items: stretch;
-  
+
         &:not(:nth-child(1)) {
           margin-top: 1rem;
         }
-  
+
         img {
           width: 64px;
           height: 64px;
           border: 2px solid #e5e7e8;
         }
-  
+
         .media-body {
           margin: 0.5rem 2px 2px;
           background-color: rgba(0,0,0,0.03);
         }
-      }
-    }
-
-    .btn-yellow {
-      color: white;
-      background-color: $yellow;
-      border-color: $yellow;
-    
-      &:hover {
-        background-color: transparentize($yellow, 0.3);
-        border-color: $yellow;
       }
     }
   }
