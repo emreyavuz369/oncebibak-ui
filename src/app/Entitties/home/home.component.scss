@@ -1,9 +1,9 @@
-$primary: rgba(35, 4, 68, 1);
-$secondary: rgba(252, 202, 86, 1);
+@import "./src/variables";
 
 .logo {
   white-space: nowrap;
   display: inline-block;
+  margin-bottom: 8rem;
 
   .oncebibak {
     color: $primary;
@@ -33,8 +33,6 @@ $secondary: rgba(252, 202, 86, 1);
     transform: translate(-824.011px, -149.364px) matrix(1, 0, 0, 1, 886.322, 172.4883) rotate(-3deg);
     line-height: 0;
   }
-
-  margin-bottom: 8rem;
 }
 
 .slogan {
@@ -44,5 +42,20 @@ $secondary: rgba(252, 202, 86, 1);
   margin-bottom: 3rem;
 }
 
+@media screen and (max-width: 992px) {
+  .logo {
+    margin-bottom: 4rem;
+
+
+    .oncebibak {
+      font-size: 2em;
+    }
+
+    .sonra-al {
+      font-size: 3em;
+      transform: translate(-841.011px, -161.364px) matrix(1, 0, 0, 1, 886.322, 172.4883) rotate(-3deg);
+    }
+  }
+}
 
 
