@@ -1,18 +1,19 @@
 #about {
-  height: 63vh;
-  // todo: footer height'ı sabitlenmeli (https://codepen.io/chriscoyier/pen/aZoBMb)
-}
+  margin-top: 150px;
 
-#background {
-  position: fixed;
-  top: 3.5rem;
-  left: 0;
-  z-index: -1;
-  opacity: 0.5;
-
-  img {
+  #background {
     position: fixed;
-    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-color: black;
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      opacity: 0.5;
+    }
   }
 }
 
@@ -21,7 +22,6 @@
   @media screen and (max-width: 750px) {
     font-size: 16px;
   }
-  margin-top: 20%;
   width: 75%;
   position: fixed;
   left: 50%;
