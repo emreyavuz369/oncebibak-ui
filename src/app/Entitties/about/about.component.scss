@@ -1,5 +1,5 @@
 #about {
-  margin-top: 150px;
+  margin-top: 400px;
 
   #background {
     position: fixed;
@@ -7,6 +7,21 @@
     top: 0;
     z-index: -1;
     background-color: black;
+    margin-top: 53px;
+
+    @media only screen and (min-width: 768px) {
+      img {
+        content: url("../../../assets/images/ID278.png");
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+
+      img {
+        content: url("../../../assets/images/mobilContact.png");
+      }
+
+    }
 
     img {
       width: 100%;
